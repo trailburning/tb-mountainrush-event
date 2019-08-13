@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mountain Rush Event</title>
+<meta charset="utf-8">
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<meta name="google" value="notranslate">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='static-assets/css/web_platform.css' rel='stylesheet' />
+<style>
+.compass,
+.credits,
+.powered-by,
+.labelContainer {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+<script>
+var APP = 'DefApp';
+</script>
+
+<div id="map-view">
+  <div id="piste-view" class="map"></div>
+
+  <div class="game-details-container">
+    <div class="countdown-container" data-value-day="day" data-value-days="days">
+      <div class="countdown">
+        <span class="clock"></span>
+        <span class="end">
+          <span class="days"><span class="time">0</span><span class="days-marker"> days</span></span>
+          <span class="hours"><span class="time"><span>00</span><span class="marker">:</span><span>00</span><span class="marker">:</span><span>00</span></span></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+
+<script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
+
+<script type="text/javascript">
+if ( typeof Procedural === 'undefined' ) { Procedural = {}; }
+</script>
+</html>
