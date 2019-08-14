@@ -7,8 +7,7 @@ var CONTROLLER_API_URL  = 'server/';
 var TB_API_EXT = '';
 var TB_API_URL  = 'https://api.trailburning.com/v2';
 var CAMPAIGN_ID = 'djJrblYlXV';
-//var GAME_ID = 'JbrpEXJ4Vy';
-var GAME_ID = 'mJYKGoeYx3';
+var GAME_ID = 'ky4eaoQ41L';
 var CAMPAIGN_TEMPLATE = 'deault';
 var TEST_PROGRESS = false;
 
@@ -21,7 +20,6 @@ var STATE_TOGGLE_SNOW = 3;
 var STATE_GOTO_START = 4;
 var STATE_GOTO_SUMMIT = 5;
 var STATE_FOCUS_PLAYER = 6;
-var STATE_MOVE_PLAYER = 7;
 
 define([
   'underscore',
@@ -101,12 +99,6 @@ define([
 
         case STATE_FOCUS_PLAYER:
           mountain3DView.selectPlayer(currPlayerModel.get('playerObj').model.get('id'));
-          break;
-
-        case STATE_MOVE_PLAYER:
-          if (currPlayerModel) {
-//            getPlayers();
-          }
           break;
       }
     }
