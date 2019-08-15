@@ -23,6 +23,11 @@
 <body>
 <script>
 var APP = 'DefApp';
+
+//var GAME_API_URL  = 'https://tb-game-api.herokuapp.com/';
+var GAME_API_URL  = 'http://localhost:3456/projects/Trailburning/tb-game-api/';
+var GAME_ID = 'ky4eaoQ41L';
+//var GAME_ID = 'Qqrd8oQrO9';
 </script>
 
 <div id="map-view">
@@ -40,8 +45,16 @@ var APP = 'DefApp';
     </div>
   </div>
 
+  <div class="fundraise-sticker-container">
+    <div class="fundraise-sticker">
+      <div class="details">
+        <div class="percent" style="top: 100%;height: 0%;"></div>
+        <div class="raised">€<span class="amount">0</span></div>
+          <div class="target">Raised of €<span class="amount">0</span><br>target</div>
+      </div>      
+    </div>
+  </div>
 </div>
-
 
 </body>
 

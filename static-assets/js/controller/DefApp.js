@@ -1,13 +1,10 @@
 var app = app || {};
 
-//var GAME_API_URL  = 'https://tb-game-api.herokuapp.com/';
-var GAME_API_URL  = 'http://localhost:3456/projects/Trailburning/tb-game-api/';
 var CONTROLLER_API_URL  = 'server/';
 
 var TB_API_EXT = '';
 var TB_API_URL  = 'https://api.trailburning.com/v2';
 var CAMPAIGN_ID = 'djJrblYlXV';
-var GAME_ID = 'ky4eaoQ41L';
 var CAMPAIGN_TEMPLATE = 'deault';
 var TEST_PROGRESS = false;
 
@@ -27,11 +24,12 @@ define([
   'bootstrap', 
   'moment',
   'countdown',
+  'animateNumber',
   'turf',
   'views/Player',
   'views/ChallengeView',
   'views/Mountain3DView'
-], function(_, Backbone, bootstrap, moment, countdown, turf, Player, ChallengeView, Mountain3DView){
+], function(_, Backbone, bootstrap, moment, countdown, animateNumber, turf, Player, ChallengeView, Mountain3DView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -218,6 +216,33 @@ define([
             onPlayersLoaded();
           }
         });
+
+        player.getFundraising(function(jsonResult){
+          // update fundraising
+          var fRaised = Number(jsonResult.totalRaisedOnline);
+          var fTarget = Number(jsonResult.fundraisingTarget);
+
+          var elTargetAmount = $('.fundraise-sticker .target .amount');
+          var fPrevTarget = Number(elTargetAmount.html());
+
+          if (fTarget != fPrevTarget) {
+            elTargetAmount.prop('number', fPrevTarget).animateNumber({ number: fTarget }, { duration: 2000 });
+          }
+  
+          if (fRaised) {
+            var elRaisedAmount = $('.fundraise-sticker .raised .amount');
+            var fPrevRaised = Number(elRaisedAmount.html());
+
+            if (fRaised != fPrevRaised) {
+              elRaisedAmount.prop('number', fPrevRaised).animateNumber({ number: fRaised }, { duration: 2000 });
+            }
+
+            var fPercentRaised = (fRaised / fTarget) * 100;
+            console.log(fPercentRaised);            
+            $('.fundraise-sticker .percent').attr('style', 'top: ' + (100 - fPercentRaised) + '%;height: ' + fPercentRaised + '%');
+          }
+        });
+
         model.set('playerObj', player);
       });
     }

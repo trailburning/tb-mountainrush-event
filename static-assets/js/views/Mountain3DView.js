@@ -62,7 +62,7 @@ define([
           this.nState = STATE_READY;
 
           var coords = this.playerCollection.get(this.currPlayerID).get('jsonPlayer').features[0].geometry.coordinates;
-          Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 5000} );
+          Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 5000, angle: 5} );
           break;
 
         case STATE_SELECT_PLAYER_NO_SELECT:
@@ -604,7 +604,7 @@ define([
     },
 
     playRoute: function(){
-      Procedural.animateAlongFeature( ROUTE_ID, { distance: 7000, speed: 200 } );
+      Procedural.animateAlongFeature( ROUTE_ID, { distance: 1000, speed: 500 } );
     },
 
     campaignAttractor: function(){
@@ -633,8 +633,8 @@ define([
           var geo = {
             title: 'winter',
             parameters: {
-              snowTop: 100,
-              snowBottom: 100,
+              snowTop: 2800,
+              snowBottom: 1000,
               snowInclination: 1
             }
           };
