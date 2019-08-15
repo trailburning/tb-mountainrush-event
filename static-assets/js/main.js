@@ -12,7 +12,8 @@ require.config({
     countdown: 'libs/jquery.countdown.min',
     animateNumber: 'libs/jquery.animateNumber.min',
     turf: 'https://npmcdn.com/@turf/turf/turf.min',
-    piste: 'https://planet.procedural.eu/procedural-js/0.3.2/procedural',
+//    piste: 'https://planet.procedural.eu/procedural-js/0.3.2/procedural',
+    piste: 'https://planet.procedural.eu/procedural-js/0.3.9/procedural',
     detector: 'https://planet.procedural.eu/procedural.detector'
   },
   shim: {
@@ -20,6 +21,9 @@ require.config({
       deps: ['jquery']
     },
     'countdown' : {
+      deps: ['jquery']
+    },
+    'animateNumber' : {
       deps: ['jquery']
     }
   }

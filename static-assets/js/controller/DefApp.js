@@ -362,9 +362,6 @@ define([
       nCurrPlayer = 0;
       currPlayerModel = playerCollection.at(nCurrPlayer);
 
-      // mla
-      console.log('p:'+fCurrProgress+' : '+currPlayerModel.get('progress'));
-
       // do we have progress?
       if (currPlayerModel.get('progress') > fCurrProgress) {
         console.log('NEW PROGRESS');
