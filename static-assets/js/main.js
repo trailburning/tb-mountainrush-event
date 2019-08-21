@@ -13,7 +13,7 @@ require.config({
     animateNumber: 'libs/jquery.animateNumber.min',
     turf: 'https://npmcdn.com/@turf/turf/turf.min',
 //    piste: 'https://planet.procedural.eu/procedural-js/0.3.2/procedural',
-    piste: 'https://planet.procedural.eu/procedural-js/0.3.9/procedural',
+    piste: 'https://planet.procedural.eu/procedural-js/0.3.10/procedural',
     detector: 'https://planet.procedural.eu/procedural.detector'
   },
   shim: {

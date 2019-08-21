@@ -193,6 +193,8 @@ define([
       nPlayersLoaded = 0;
       playerCollection = new Backbone.Collection(jsonCurrGame.players);
 
+      var fAltTotal = jsonCurrGame.ascent;
+
       // get player activity data
       playerCollection.each(function(model){
         var player = new Player({ model: model, gameID: GAME_ID, journeyLength: mountainModel.get('distance'), journeyAscent: jsonCurrGame.ascent });
@@ -200,6 +202,13 @@ define([
         player.getProgress(function(model){
           // default to complete
           var fProgress = mountainModel.get('distance');
+
+// mla
+          var fAltLeft = Number(fAltTotal) - Number(model.get('elevationGain'));
+          var elAltLeft = $('.alt-left');
+          var fPrevAltLeft = $('.alt-left').html();
+          elAltLeft.prop('number', fPrevAltLeft).animateNumber({ number: fAltLeft }, { duration: 2000 });
+
           // if not complete then calc how far
           if (model.get('elevationGainPercent') < 100) {
             fProgress = (model.get('elevationGainPercent') * mountainModel.get('distance')) / 100;
@@ -251,7 +260,6 @@ define([
       app.dispatcher.on("ChallengeView:ready", onGameLoaded);
 
       challengeView = new ChallengeView({ gameID: GAME_ID });
-
       challengeView.load();
     }
 
@@ -286,6 +294,7 @@ define([
           elCountdownContainer.show();
         });
       }
+
       getJourney(jsonGame.journeyID, jsonGame.mountain3DName);
     }
 /*

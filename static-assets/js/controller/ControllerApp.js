@@ -45,8 +45,8 @@ define([
           console.log(data);
         },
         success: function(data) {
-//          console.log('success');
-//          console.log(data);
+          console.log('success');
+          console.log(data);
         }
       });      
     }
