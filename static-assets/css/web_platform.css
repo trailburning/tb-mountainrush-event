@@ -75,30 +75,51 @@ body {
 #map-view .game-details-container {
   position: absolute;
   pointer-events: none;
-  top: 26px;
-  width: 100%;
-  text-align: center;
+  top: 100px;
+  left: 20px;
+  text-align: left;
 }
 
 .countdown-container {
   display: none;
 }
 
-#map-view .countdown {
-  display: inline-block;
-  width: 260px;
-}
-
 .countdown {
-  line-height: 1em;
+  display: inline-block;
   color: #fff;
   text-transform: uppercase;
   text-align: left;
 }
 
+.countdown .clock {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.countdown .clock:before {
+  content: ' ';
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 6px;
+  height: 7px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
 .countdown .days {
   padding-left: 8px;
   font-size: 2.4em;
+}
+
+.countdown.zero-days .days {
+  display: none;
 }
 
 .countdown .days .time {
@@ -113,6 +134,12 @@ body {
   font-size: 1.4em;
 }
 
+.countdown.zero-days .hours {
+  padding-left: 8px;
+  text-align: left;
+  font-size: 2.4em;
+}
+
 .countdown .hours .time {
   font-family: 'radikallight', sans-serif;
 }
@@ -121,15 +148,32 @@ body {
 /******************************************/
 .player-progress-container {
   position: absolute;
-  top: 20px;
+  top: 26px;
   left: 20px;
-
-  font-size: 2.4em;
-  line-height: 1em;
   color: #fff;
   text-transform: uppercase;
-  text-align: left;
-  
+  text-align: left;  
+}
+
+.player-progress-container .info {
+  font-size: 2.4em;
+  line-height: 1.6em;
+}
+
+.player-progress-container .info .ascent {
+  display: inline-block;
+  width: 120px;
+  padding-right: 20px;
+  text-align: right;
+  color: #000;
+  background: #FFF;
+}
+
+.player-progress-container .info .challenge {
+  display: inline-block;
+  padding: 0 20px;
+  color: #FFF;
+  background: #3c5b6e;
 }
 
 /* FUNDRAISE STICKER */
@@ -144,8 +188,8 @@ body {
   z-index: 1;
   position: relative;
   border: 4px solid #fff;
-  width: 110px;
-  height: 110px;
+  width: 240px;
+  height: 240px;
   overflow: hidden;
   border-radius: 50%;
   background: #3c5b6e;
@@ -172,24 +216,24 @@ body {
 
 .fundraise-sticker .details .raised {
   position: relative;
-  margin: 16px 10px 0 10px;
-  font-size: 1.7em;
+  margin: 32px 10px 0 10px;
+  font-size: 3.5em;
   line-height: 1em;
 }
 
 .fundraise-sticker .details .target {
   position: relative;
   z-index: 2;
-  font-size: .75em;
-  line-height: 1.3em;
+  font-size: 1.6em;
+  line-height: 1.4em;
 }
 
 .fundraise-sticker .details .target:before {
   content: ' ';
   display: block;
-  margin: 0 auto 6px auto;
-  padding: 6px 0 0 0;
-  width: 60px;
+  margin: 0 auto 18px auto;
+  padding: 18px 0 0 0;
+  width: 120px;
   height: 2px;
   border-bottom: 1px solid #fff;
 }

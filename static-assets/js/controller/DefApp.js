@@ -203,8 +203,11 @@ define([
           // default to complete
           var fProgress = mountainModel.get('distance');
 
-// mla
           var fAltLeft = Number(fAltTotal) - Number(model.get('elevationGain'));
+          if (fAltLeft <= 0) {
+            $('.player-progress-container').html($('.player-progress-container').attr('data-summit')); 
+          }
+
           var elAltLeft = $('.alt-left');
           var fPrevAltLeft = $('.alt-left').html();
           elAltLeft.prop('number', fPrevAltLeft).animateNumber({ number: fAltLeft }, { duration: 2000 });
@@ -266,6 +269,8 @@ define([
     function onGameLoaded(jsonGame) {
       jsonCurrGame = jsonGame;
 
+      $('.player-progress-container .challenge').html(jsonCurrGame.level_name);
+
       // convert UTC dates to local
       var dLocalGameNow = new Date(jsonGame.game_now);
       var dLocalGameStart = new Date(jsonGame.game_start);
@@ -291,6 +296,11 @@ define([
             + '<span class="hours">'
               + '<span class="time"><span>%H</span><span class="marker">:</span><span>%M</span><span class="marker">:</span><span>%S</span></span>'
             + '</span>'));
+
+          if (Number(event.strftime('%-D')) == 0) {
+            $('.countdown').addClass('zero-days');
+          }
+
           elCountdownContainer.show();
         });
       }

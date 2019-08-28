@@ -60,9 +60,6 @@ define([
 
         case STATE_SELECT_PLAYER:
           this.nState = STATE_READY;
-
-//          var coords = this.playerCollection.get(this.currPlayerID).get('jsonPlayer').features[0].geometry.coordinates;
-//          Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 5000, angle: 5} );
           break;
 
         case STATE_SELECT_PLAYER_NO_SELECT:
@@ -153,7 +150,7 @@ define([
       this.showPlayer(this.currPlayerID);
 
       var coords = this.playerCollection.get(this.currPlayerID).get('jsonPlayer').features[0].geometry.coordinates;
-      Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 5000, angle: 5} );
+      Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 2000} );
     },
 
     selectPlayerNoSelect: function(id){

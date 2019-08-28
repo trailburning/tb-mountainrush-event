@@ -1,8 +1,5 @@
 var app = app || {};
 
-//var GAME_API_URL  = 'https://tb-game-api.herokuapp.com/';
-var GAME_API_URL  = 'http://localhost:3456/projects/Trailburning/tb-game-api/';
-
 var CONTROLLER_API_URL  = 'server/';
 
 var STATE_FLY = 1;
@@ -33,8 +30,8 @@ define([
                       distance: 5000, 
                       total_elevation_gain: 50};
 
-      var url = GAME_API_URL + "player/b31r7RZ7Xo/activity";
-//      console.log(url);
+      var url = GAME_API_URL + 'player/' + PLAYER_ID + '/activity';
+      console.log(url);
       $.ajax({
         type: 'post',
         dataType: 'json',
