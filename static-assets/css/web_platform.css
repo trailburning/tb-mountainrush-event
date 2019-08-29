@@ -75,8 +75,8 @@ body {
 #map-view .game-details-container {
   position: absolute;
   pointer-events: none;
-  top: 100px;
-  left: 20px;
+  top: 130px;
+  left: 50px;
   text-align: left;
 }
 
@@ -148,8 +148,8 @@ body {
 /******************************************/
 .player-progress-container {
   position: absolute;
-  top: 26px;
-  left: 20px;
+  top: 50px;
+  left: 50px;
   color: #fff;
   text-transform: uppercase;
   text-align: left;  
@@ -180,8 +180,8 @@ body {
 /******************************************/
 .fundraise-sticker-container {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 50px;
+  right: 50px;
 }
 
 .fundraise-sticker {
