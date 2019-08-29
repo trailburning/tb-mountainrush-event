@@ -150,7 +150,7 @@ define([
       this.showPlayer(this.currPlayerID);
 
       var coords = this.playerCollection.get(this.currPlayerID).get('jsonPlayer').features[0].geometry.coordinates;
-      Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 2000} );
+      Procedural.focusOnLocation( {latitude: coords[1], longitude: coords[0], distance: 3000} );
     },
 
     selectPlayerNoSelect: function(id){

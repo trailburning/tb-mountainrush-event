@@ -9,7 +9,9 @@ body {
 }
 
 .btns {
-  padding: 10px 0
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .btns .mr-btn {
@@ -37,6 +39,11 @@ body {
 
 .btn:hover {
   cursor: pointer;
+}
+
+input {
+  padding: 6px 16px;
+  border: 1px solid #3c5b6e;
 }
 
 #map-view {

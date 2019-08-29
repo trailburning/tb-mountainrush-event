@@ -11,7 +11,7 @@ require.config({
     photoswipeui: 'libs/photoswipe-ui-default-with-ig.min',
     countdown: 'libs/jquery.countdown.min',
     animateNumber: 'libs/jquery.animateNumber.min',
-    turf: 'https://npmcdn.com/@turf/turf/turf.min',
+    turf: 'https://npmcdn.com/@turf/turf/turf.min',    
 //    piste: 'https://planet.procedural.eu/procedural-js/0.3.2/procedural',
     piste: 'https://planet.procedural.eu/procedural-js/0.3.10/procedural',
     detector: 'https://planet.procedural.eu/procedural.detector'

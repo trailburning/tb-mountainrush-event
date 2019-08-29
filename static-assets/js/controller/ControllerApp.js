@@ -11,8 +11,9 @@ var STATE_FOCUS_PLAYER = 6;
 
 define([
   'underscore',
-  'backbone'
-], function(_, Backbone){
+  'backbone',
+  'bootstrap'
+], function(_, Backbone, bootstrap){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -24,14 +25,14 @@ define([
   var initialize = function() {
     var self = this;
 
-    function createPlayerActivity() {
+    function createPlayerActivity(fAscent) {
       var jsonData = {id: '0', 
                       type: 'Ride', 
-                      distance: 5000, 
-                      total_elevation_gain: 50};
+                      distance: 0, 
+                      total_elevation_gain: fAscent};
 
       var url = GAME_API_URL + 'player/' + PLAYER_ID + '/activity';
-      console.log(url);
+//      console.log(url);
       $.ajax({
         type: 'post',
         dataType: 'json',
@@ -94,7 +95,7 @@ define([
     });
 
     $('.moveplayer').click(function(evt){
-      createPlayerActivity();
+      createPlayerActivity($('#ascent').val());
     });
   };
 
