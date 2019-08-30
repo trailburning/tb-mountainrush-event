@@ -8,7 +8,7 @@ var CAMPAIGN_ID = 'djJrblYlXV';
 var CAMPAIGN_TEMPLATE = 'deault';
 var TEST_PROGRESS = false;
 
-var ACTIVITY_CHECK_TIMER = 10000;
+var ACTIVITY_CHECK_TIMER = 5000;
 var CONTROLLER_TIMER = 500;
 
 var STATE_FLY = 1;
@@ -190,6 +190,8 @@ define([
     }
 
     function getPlayers() {
+      console.log('getPlayers');
+
       nPlayersLoaded = 0;
       playerCollection = new Backbone.Collection(jsonCurrGame.players);
 
@@ -204,13 +206,15 @@ define([
           var fProgress = mountainModel.get('distance');
 
           var fAltLeft = Number(fAltTotal) - Number(model.get('elevationGain'));
-          if (fAltLeft <= 0) {
-            $('.player-progress-container').html($('.player-progress-container').attr('data-summit')); 
-          }
-
           var elAltLeft = $('.alt-left');
           var fPrevAltLeft = $('.alt-left').html();
-          elAltLeft.prop('number', fPrevAltLeft).animateNumber({ number: fAltLeft }, { duration: 2000 });
+
+          if (fAltLeft <= 0) {
+            elAltLeft.html('0'); 
+          }
+          else {
+            elAltLeft.prop('number', fPrevAltLeft).animateNumber({ number: fAltLeft }, { duration: 2000 });
+          }
 
           // if not complete then calc how far
           if (model.get('elevationGainPercent') < 100) {

@@ -300,7 +300,7 @@ define([
 
       if (!bShowPosLabel) {
         fIconY = 1.05;
-        fCaretY = 0.2;
+        fCaretY = 0.3;
 
         jsonPlayer = {
           "name": id,
@@ -315,10 +315,10 @@ define([
               "properties": {
                 "selectable": bAllowPlayerSelect,
                 "fadeDistance": nFadeDistance,
-                "borderRadius": 32,
+                "borderRadius": 50,
                 "image": strAvatar,
-                "height": 64,
-                "width": 64,
+                "height": 100,
+                "width": 100,
                 "borderWidth": 2,
                 "background": "#ccc",
                 "anchor": {
