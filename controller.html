@@ -42,11 +42,27 @@ var PLAYER_ID = 'KerNANXZmw' // MR Event
 </div>
 
 <div class="btns">
-  <div class="btn mr-btn btn-primary moveplayer">Climb Player 1</div>
+  <div class="btn mr-btn btn-primary manualclimb">Manual Climb</div>
 </div>
 
-<div class="btns">
-  <input id="ascent" type="number" value="50">
+<div id="manual-climb-modal-view">
+  <div class="modal msg-overlay" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="details">
+            <div class="btns">
+              <input id="ascent" type="number" value="50">
+            </div>
+
+            <div class="btns">
+              <div class="btn mr-btn btn-primary moveplayer">Post Climb Activity</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 </div>
 
 </body>

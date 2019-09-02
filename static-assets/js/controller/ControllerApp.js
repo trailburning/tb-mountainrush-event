@@ -94,8 +94,13 @@ define([
       changeState(STATE_FOCUS_PLAYER);
     });
 
+    $('.manualclimb').click(function(evt){
+      $('#manual-climb-modal-view .modal').modal();
+    });
+
     $('.moveplayer').click(function(evt){
       createPlayerActivity($('#ascent').val());
+      $('#manual-climb-modal-view .modal').modal('hide');
     });
   };
 
